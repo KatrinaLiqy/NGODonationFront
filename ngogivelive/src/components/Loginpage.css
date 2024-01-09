@@ -1,0 +1,10 @@
+.login-container {
+    max-width: 300px;
+    margin: auto;
+    padding-top: 50px;
+    text-align: center;
+  }
+  
+  .login-form-button {
+    width: 100%;
+  }
