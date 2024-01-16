@@ -1,9 +1,9 @@
-import { Button, Form, Input, message, Checkbox, notification, Tabs } from 'antd'
+import { Button, Form, Input, Checkbox, notification, Tabs } from 'antd'
 import './Loginpage.css';
+import { Link } from 'react-router-dom';
 import React, { useState } from 'react';
 import { loginuser, loginadmin } from '../utils'
 
-const { TabPane } = Tabs;
 function Loginpage() {
   const [loading, setLoading] = useState(false)
 
@@ -73,13 +73,13 @@ function Loginpage() {
           <Input.Password />
         </Form.Item>
 
-        <Form.Item name="remember" valuePropName="checked" wrapperCol={{ offset: 8, span: 16 }}>
+        <Form.Item name="remember" valuePropName="checked" wrapperCol={{ offset: 4, span: 16 }}>
           <Checkbox>Remember me</Checkbox>
         </Form.Item>
 
-        <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
+        <Form.Item wrapperCol={{ offset: 4, span: 16 }}>
           <Button type="primary" htmlType="submit" loading={loading}>
-            Sign in
+            <Link to="/home">Sign in</Link>
           </Button>
         </Form.Item>
 
@@ -99,8 +99,21 @@ function Loginpage() {
   ];
 // return UI tab for dual login
   return (
-    <div className="login-container">
-      <Tabs items={tabItems} />
+    <div className='background'>
+        <div className="login-container">
+          <div className="title-container">
+            <div className="left-div">
+              <div className="login-title">Welcome to NGO GIVE</div>
+              <div className="login-title2">SIGN IN</div>
+            </div>
+            <div className="right-div">
+              <div className="login-title3">No Account? <br/> <Link to="/register">Sign Up</Link>
+            </div>
+          </div>
+         
+          </div>
+            <Tabs items={tabItems} />
+          </div>
     </div>
   );
 };
