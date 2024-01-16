@@ -49,7 +49,7 @@ function Loginpage() {
     console.log('Failed:', errorInfo);
   };
 // UI of login
-  const LoginForm = ({ onFinish }) => (
+  const LoginForm = ({ onFinish, onFinishFailed,loading}) => (
     <Form
       name="basic"
       initialValues={{ remember: true }}
@@ -100,6 +100,7 @@ function Loginpage() {
 // return UI tab for dual login
   return (
     <div className='background'>
+        {/* Tile and Register button  */}
         <div className="login-container">
           <div className="title-container">
             <div className="left-div">
@@ -110,7 +111,7 @@ function Loginpage() {
               <div className="login-title3">No Account? <br/> <Link to="/register">Sign Up</Link>
             </div>
           </div>
-         
+         {/* SIGN IN  */}
           </div>
             <Tabs items={tabItems} />
           </div>

@@ -1,0 +1,83 @@
+.background {
+    background: linear-gradient(to right,#57cf4550 50%, white 50%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  .login-container {
+    width: 50%;
+    height: 70%;
+    /* 539 px is the max-width of the login container*/
+    max-width: 539px;
+    max-height: 741px;
+    background-color: white;
+    padding-top: 70px;
+    padding-bottom: 70px;
+    padding-left: 50px;
+    padding-right: 50px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    font-size: 30px; 
+    border-radius: 10px;
+  }
+  
+  /*title UI*/
+  .title-container {
+    display: flex;
+    justify-content: space-between;
+    justify-content: space-between;
+    padding-bottom: 20px;
+  }
+  
+  .left-div {
+    text-align: left;
+    width: 70%; 
+  }
+  .right-div {
+    width: 30%; 
+  }
+  .login-title {
+    color: #000;
+    font-family: Poppins;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  
+  .login-title2 {
+    color: #000;
+    font-family: Poppins;
+    font-size: 45px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+  }
+  
+  .right-div {
+    color: #8D8D8D;
+    font-family: Poppins;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-align: left; 
+  }
+  
+  .right-div a { /* 设置链接的样式 */
+    color: #B87514;
+    font-family: Poppins;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  
+  .right-div a:hover { /* 鼠标悬浮时的样式 */
+    text-decoration: underline;
+  }
+  
+  
+  
+  
