@@ -1,85 +1,42 @@
 import React, { useState } from 'react';
-import { Form, Input, Button, Checkbox } from 'antd';
+import { message } from 'antd';
 import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
+
 import './RegisterPage.css';
+import RegisterForm from './RegisterForm';
 
 function RegisterPage() {
+    const navigate = useNavigate();
     const [loading, setLoading] = useState(false);
-    const onFinishFailed = (errorInfo) => {
+    const onFinish = async (values) => {
+      setLoading(true);
+      console.log('Success:', values);
+      try {
+        /* Uncomment this block to send data to backend 
+
+        Replace 'YOUR_BACKEND_ENDPOINT' with your actual backend endpoint
+        const response = await axios.post('YOUR_BACKEND_ENDPOINT', values);
+        console.log('Server response:', response.data);
+        */
+        // Register user here
+        message.success('Registration successful!', 2);
+        navigate('/'); // back to login page
+      } catch (error) {
+        // Handle error here
+        console.error('Registration failed:', error);
+        message.error('Registration failed. Please try again.');
+      } finally {
+        setLoading(false);
+      }
+    };
+    const onFinishFailed = async (errorInfo) => {
         console.log('Failed:', errorInfo);
-      };
-
-    const RegisterForm = ({ onFinish, onFinishFailed, loading }) => (
-        <Form
-          name="register"
-          initialValues={{ remember: true }}
-          onFinish={onFinish}
-          onFinishFailed={onFinishFailed}
-          autoComplete="off"
-        >
-          <Form.Item
-            label="Email"
-            name="email"
-            rules={[{ required: true, message: 'Please input your email!' }]}
-          >
-            <Input />
-          </Form.Item>
-      
-          <Form.Item
-            label="Username"
-            name="username"
-            rules={[{ required: true, message: 'Please input your username!' }]}
-          >
-            <Input />
-          </Form.Item>
-
-          <Form.Item
-            label="ContactNumber"
-            name="ContactNumber"
-            rules={[{ required: true, message: 'Please input your Contact Number!' }]}
-          >
-            <Input />
-          </Form.Item>
-      
-          <Form.Item
-            label="Password"
-            name="password"
-            rules={[{ required: true, message: 'Please input your password!' }]}
-          >
-            <Input.Password />
-          </Form.Item>
-      
-          <Form.Item
-            label="Confirm Password"
-            name="confirmPassword"
-            dependencies={['password']}
-            rules={[
-              { required: true, message: 'Please confirm your password!' },
-              ({ getFieldValue }) => ({
-                validator(_, value) {
-                  if (!value || getFieldValue('password') === value) {
-                    return Promise.resolve();
-                  }
-                  return Promise.reject(new Error('The two passwords that you entered do not match!'));
-                },
-              }),
-            ]}
-          >
-            <Input.Password />
-          </Form.Item>
-      
-          <Form.Item wrapperCol={{ offset: 4, span: 16 }}>
-            <Button type="primary" htmlType="submit" loading={loading}>
-              Register
-            </Button>
-          </Form.Item>
-
-      
-        </Form>
-      );
-
+    };
+  
     return (
-        <div className='background'>
+        <div className='Rebackground'>
             <div className="login-container">
                     <div className="title-container">
                         <div className="left-div">
@@ -93,7 +50,10 @@ function RegisterPage() {
             </div>
             <div className="form-container">
                 <div className="form-div">
-                    <RegisterForm />
+                    <RegisterForm 
+                      onFinish={onFinish} 
+                      onFinishFailed={onFinishFailed} 
+                      loading={loading}/>
                 </div>
             </div>
             </div>

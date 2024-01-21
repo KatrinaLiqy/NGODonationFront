@@ -3,11 +3,13 @@ import './Loginpage.css';
 import { Link } from 'react-router-dom';
 import React, { useState } from 'react';
 import { loginuser, loginadmin } from '../utils'
+import { useNavigate } from 'react-router-dom';
 
 function Loginpage() {
   const [loading, setLoading] = useState(false)
-
+  const navigate = useNavigate();
   const onFinishUser = async (data) => {
+    
     setLoading(true);
     try {
       await loginuser(data);
@@ -15,6 +17,7 @@ function Loginpage() {
         message: 'Login Successful',
         description: 'You have successfully logged in.',
       });
+      navigate('/home');
       // Redirect or further actions here after successful login
     } catch (error) {
       notification.error({
@@ -34,6 +37,7 @@ function Loginpage() {
         message: 'Login Successful',
         description: 'You have successfully logged in.',
       });
+      navigate('/home');
       // Redirect or further actions here after successful login
     } catch (error) {
       notification.error({
@@ -79,7 +83,8 @@ function Loginpage() {
 
         <Form.Item wrapperCol={{ offset: 4, span: 16 }}>
           <Button type="primary" htmlType="submit" loading={loading}>
-            <Link to="/home">Sign in</Link>
+            <Link to="/home">Sign in</Link> 
+            {/* link to home page need to delte the link, this way just easy go to home page*/}
           </Button>
         </Form.Item>
 
@@ -111,12 +116,12 @@ function Loginpage() {
               <div className="login-title3">No Account? <br/> <Link to="/register">Sign Up</Link>
             </div>
           </div>
-         {/* SIGN IN  */}
+         {/* SIGN IN TABLE */}
           </div>
             <Tabs items={tabItems} />
-          </div>
+        </div>
     </div>
   );
 };
 
-export default Loginpage
+export default Loginpage;

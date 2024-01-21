@@ -1,0 +1,79 @@
+/* Homepage.css */
+/*backgroud*/
+.homebackground {
+    background: url('../../public/images/backgroud.jpg') 10% center / 100% auto no-repeat;
+    min-height: 90vh;
+}
+
+/**/
+.menu-bar {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: #f0f0f0;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .menu-bar span {
+    cursor: pointer;
+    margin-right: 15px;
+  }
+  
+  .menu-bar span:hover {
+    text-decoration: underline;
+  }
+  
+  .content-area {
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    height: 100vh;
+  }
+  .area {
+    width: calc(34% + 5px);;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transform: scale(0.95);
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .area1 { background-color: rgba(173, 216, 230, 0.897); }
+  .area2 { background-color: rgba(144, 238, 144, 0.904); }
+  .area3 { background-color: rgba(240, 128, 128, 0.966); }
+  
+  .area:hover {
+    transform: scale(1);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.8);
+  }
+  .area-content {
+    
+    text-align: center;
+    color: white;
+    font-size: 30px;
+  }
+  .Hcreatebutton {
+    background-color: #F5F5DC;
+    border: none;
+    color: black;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 25px;
+    border-radius: 10px;
+  }
+  .Hcreatebutton:hover {
+    background-color: #F5F5DC;
+    color: black;
+  }
+  .footer-bar {
+    background-color: #f0f0f0; 
+    padding: 20px;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+  }
+  

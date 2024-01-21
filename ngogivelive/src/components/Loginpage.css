@@ -1,5 +1,8 @@
 .background {
-  background: linear-gradient(to right,#57cf4550 50%, white 50%);
+  background: 
+    url('../../public/images/donation3.png') 10% center / 25% auto no-repeat,
+    url('../../public/images/donation1.jpg') 90% center / 25% auto no-repeat,
+    linear-gradient(to right, #57cf4550 50%, white 50%);
   min-height: 100vh;
   display: flex;
   justify-content: center;
@@ -8,7 +11,7 @@
 }
 
 .login-container {
-  width: 50%;
+  width: 40%;
   height: 70%;
   /* 539 px is the max-width of the login container*/
   max-width: 539px;
@@ -49,6 +52,7 @@
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+  padding-bottom: 10px;
 }
 
 .login-title2 {

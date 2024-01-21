@@ -1,10 +1,13 @@
-.background {
-    background: linear-gradient(to right,#57cf4550 50%, white 50%);
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+.Rebackground {
+  background: 
+  url('../../public/images/donation3.png') 10% center / 25% auto no-repeat,
+  url('../../public/images/donation1.jpg') 90% center / 25% auto no-repeat,
+  linear-gradient(to right, #57cf4550 50%, white 50%);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
   }
   .login-container {
     width: 50%;
