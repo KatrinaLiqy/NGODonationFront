@@ -1,0 +1,4 @@
+.userbackground {
+    background: url('../../public/images/backgroud.jpg') 10% center / 100% auto no-repeat;
+    min-height: 100vh;
+}

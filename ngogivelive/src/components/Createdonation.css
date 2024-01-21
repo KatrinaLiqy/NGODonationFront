@@ -1,0 +1,11 @@
+.donationbackground{
+    background-image: linear-gradient(to right, #57cf4550 50%, white 50%);
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+  }
+  
+  
